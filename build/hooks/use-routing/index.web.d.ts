@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { DefaultRouteProp, DefaultNavigationProp } from 'expo-navigation-core/build/hooks/use-routing/types';
 export default function useRouting<RProp extends DefaultRouteProp = DefaultRouteProp, NProp extends DefaultNavigationProp = DefaultNavigationProp>(): {
-    getParam: <Param>(param: _.Many<string | number | symbol>, fallback?: unknown) => Param | undefined;
+    getParam: <Param>(param: Parameters<typeof _.get>['1'], fallback?: unknown) => Param | undefined;
     navigate: <To extends {
         routeName: string;
         params?: object | undefined;
@@ -34,7 +34,7 @@ export default function useRouting<RProp extends DefaultRouteProp = DefaultRoute
     }>({ routeName, web, params, }: To) => void;
     goBack: () => void;
     popToTop: () => void;
-    prefetch: (url: string) => Promise<void>;
+    prefetch: (url: string, asPath?: string | undefined, options?: import("next/dist/next-server/lib/router/router").PrefetchOptions | undefined) => Promise<void>;
     replace: <To_1 extends {
         routeName: string;
         params?: object | undefined;

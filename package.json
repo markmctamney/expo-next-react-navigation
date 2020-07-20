@@ -28,6 +28,7 @@
     "@types/react-native": "^0.62.2",
     "expo-module-scripts": "^1.1.1",
     "jest-expo-enzyme": "^0.0.1",
+    "next": "^9.4.4",
     "prettier": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -36,7 +37,9 @@
   },
   "dependencies": {
     "expo-navigation-core": "markmctamney/expo-navigation-core#v5",
-    "lodash": "^4.17.15",
-    "next": "^9.1.5"
+    "lodash": "^4.17.15"
+  },
+  "peerDependencies": {
+    "next": "^9.4.4"
   }
 }

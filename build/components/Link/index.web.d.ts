@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TextStyle } from 'react-native';
+import { NextProps, Web } from './types';
 /**
  * Link component for react-navigation and nextjs.
  *
@@ -25,5 +26,13 @@ import { Text, View } from 'react-native';
  *```
  *
  */
-declare const Link: React.ForwardRefExoticComponent<Pick<any, string | number | symbol> & React.RefAttributes<Text | View>>;
+declare const Link: React.ForwardRefExoticComponent<{
+    children: React.ReactNode;
+    touchableOpacityProps?: import("react-native").TouchableOpacityProps | undefined;
+    style?: TextStyle | undefined;
+    routeName: string;
+    params?: {} | undefined;
+    web?: Web | undefined;
+    isText?: boolean | undefined;
+} & NextProps & React.RefAttributes<Text | View>>;
 export default Link;
