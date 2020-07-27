@@ -81,5 +81,6 @@ export default function useRouting<
     prefetch: router.prefetch,
     replace,
     setParams,
+    params: router.query,
   }
 }
